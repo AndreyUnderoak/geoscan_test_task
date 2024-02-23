@@ -28,6 +28,8 @@ model_px = 128
 goal_px = 2048
 ```
 To your input and output goal resolution values in main.py and model_train_p3_t2.py
+
+Then run:
 ```
 chmod +x train.sh 
 ./train.sh
