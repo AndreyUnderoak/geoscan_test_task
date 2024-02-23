@@ -5,7 +5,7 @@ services:
   geoscan:
     image: andrey-geoscan-test-docker
     container_name: geoscan
-    command: ["/bin/bash", "-ci", "python3 main.py"]
+    command: ["/bin/bash", "-ci", "python3 model_train_p3_t2.py"]
     environment:
       - DISPLAY
       - XAUTORITY
