@@ -30,13 +30,19 @@ class ImgWorker:
     def to_grad_x(imgs):
         ret_data = []
         for i in range(imgs.shape[0]):
-            ret_data.append(cv2.Sobel(imgs[i], ddepth=cv2.CV_32F, dx=1, dy=0))
+            ret_data.append()
         return np.asarray(ret_data)
-    
+
+    def to_grad_x(imgs):
+        ret_data = []
+        for i in range(imgs.shape[0]):
+            ret_data.append(cv2.Sobel(imgs[i], ddepth=cv2.CV_32F, dx=1, dy=0, borderType=cv2.BORDER_REFLECT_101))
+        return np.asarray(ret_data)
+
     def to_grad_y(imgs):
         ret_data = []
         for i in range(imgs.shape[0]):
-            ret_data.append(cv2.Sobel(imgs[i], ddepth=cv2.CV_32F, dx=0, dy=1))
+            ret_data.append(cv2.Sobel(imgs[i], ddepth=cv2.CV_32F, dx=0, dy=1, borderType=cv2.BORDER_REFLECT_101))
         return np.asarray(ret_data)
 
     def normalize(imgs):
