@@ -36,6 +36,4 @@ ImgWorker.save_img(x_norm, "x_norm")
 ImgWorker.save_img(y_norm, "y_norm")
 
 
-
-
 cv2.waitKey(0)
