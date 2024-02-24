@@ -9,7 +9,7 @@ tf.disable_v2_behavior()
 
 class ModelTrainer():
     def run():
-        model_px = 128
+        model_px = 512
 
         path = "./dataset/*.png"
 
