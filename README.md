@@ -16,12 +16,20 @@ Put your images into geoscan_test_task/task_workspace/input_images/(your_images.
 
 ### 3. Run with docker 🔥
 Install docker if you don't have it.
-Then run without training:
+Then run with pretrained model:
 ```
-chmod +x run.sh 
-./run.sh 
+chmod +x run_512.sh 
+./run_512.sh 
+```
+
+Or with 128 net:
+
+```
+chmod +x run_128.sh 
+./run_128.sh 
 ```
 Or with training:
+
 Change
 ```
 model_px = 128
@@ -33,6 +41,6 @@ Then run:
 ```
 chmod +x train.sh 
 ./train.sh
-chmod +x run.sh
-./run.sh 
+chmod +x run_128.sh
+./run_128.sh
 ```
