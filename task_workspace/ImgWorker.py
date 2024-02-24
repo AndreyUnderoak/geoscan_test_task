@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 class ImgWorker:
-    def save_img(imgs, name):
+    def save_img(imgs, name, postfix = ""):
         for i in range(imgs.shape[0]):
             # imk = imgs[i]
             # rows,cols = imk.shape
@@ -10,7 +10,7 @@ class ImgWorker:
             #     for j in range(cols):
             #         k = imk[i2,j]
             #         print(k)
-            cv2.imwrite('output_images/' + str(name) + "_" +str(i) +'.png', imgs[i])
+            cv2.imwrite('output_images/' + str(name) + "_" +str(i) + str(postfix) +'.png', imgs[i])
 
     def smooth_resize(imgs, px):
         ret_data = []
