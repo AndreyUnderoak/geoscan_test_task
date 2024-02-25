@@ -1,8 +1,16 @@
+# This module class is a part of geoscan task
+#
+# Made by Andrey Underoak https://github.com/AndreyUnderoak
+
 import tensorflow.compat.v1 as tf
 
 tf.disable_v2_behavior()
 
 class Model:
+    """
+    Class provides model description
+    """
+
     def __init__(self, px):
         self.px = px
 
@@ -29,7 +37,13 @@ class Model:
     
 
 class ToGray:
+    """
+    Class provides model job
+    """
     def __init__(self, path_to_model, px):
+        """
+        Preparing model for work
+        """
         self.px = px
         self.model = Model(px)
         self.ae_inputs = self.model.get_ae_inputs_form()
@@ -42,6 +56,9 @@ class ToGray:
         self.saver.restore(self.sess, path_to_model)
 
     def color_to_gray_array(self, images_np):
+        """
+        Graying images
+        """
         batch_imgs = images_np
         gray_imgs = self.sess.run(self.ae_outputs, feed_dict = {self.ae_inputs: batch_imgs})
         return gray_imgs
